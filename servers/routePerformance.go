@@ -2,8 +2,8 @@ package servers
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/ryanma3003/hris/controllers"
-	"github.com/ryanma3003/hris/middleware"
+	"github.com/ricoaditya-u/hris_dev/controllers"
+	"github.com/ricoaditya-u/hris_dev/middleware"
 )
 
 func InitializeRoutesPerformance(g *gin.RouterGroup) {

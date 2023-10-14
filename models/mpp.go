@@ -4,20 +4,18 @@ import "gorm.io/gorm"
 
 type Mpp struct {
 	gorm.Model
-	EmployeeID    int64          `json:"employeeid"`
-	Employee      Employee       `gorm:"references:EmployeeId"`
-	Period        string         `json:"period"`
-	DivisionID    uint           `json:"divisionid"`
-	Division      Division       `gorm:"foreignKey:DivisionID;constraint:OnUpdate:CASCADE,OnDelete:SET NULL;"`
-	Numberreq     int            `json:"numberreq"`
-	Budget        int            `json:"budget"`
-	Status        int            `json:"status"`
-	Reqheadcounts []Reqheadcount `gorm:"foreignKey:MppID;constraint:OnUpdate:CASCADE,OnDelete:CASCADE;"`
+	EmployeeID    uint     `json:"employeeid"`
+	Employee      Employee `json:"employee"`
+	Period        string   `json:"period"`
+	Numberreq     int      `json:"numberreq"`
+	Status        int      `json:"status"`
+	Reqheadcounts []Reqheadcount
 }
 
 type Reqheadcount struct {
 	gorm.Model
 	MppID            uint           `json:"mppid"`
+	Mpp              Mpp            `gorm:"constraint:OnUpdate:CASCADE,OnDelete:SET NULL;"`
 	EmployeeID       uint           `json:"employeeid"`
 	Employee         Employee       `gorm:"constraint:OnUpdate:CASCADE,OnDelete:SET NULL;"`
 	LevelID          int            `json:"levelid"`

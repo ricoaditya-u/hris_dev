@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/ryanma3003/hris/db"
-	"github.com/ryanma3003/hris/models"
+	"github.com/ricoaditya-u/hris_dev/db"
+	"github.com/ricoaditya-u/hris_dev/models"
 )
 
 func init() {
@@ -23,7 +23,7 @@ func main() {
 		// &models.Candidate{},
 		// &models.Role{},
 		// &models.User{},
-		&models.Family{},
+		// &models.Family{},
 		// &models.Education{},
 		// &models.Experience{},
 		// &models.HealthDisease{},
@@ -38,5 +38,7 @@ func main() {
 		// &models.SalarySlip{},
 		// &models.SalarySlipDetail{},
 		// &models.Pph{},
+		// &models.Mpp{},
+		&models.Casbin_rule{},
 	)
 }

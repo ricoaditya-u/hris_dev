@@ -5,8 +5,8 @@ import (
 	"time"
 
 	"github.com/gin-gonic/gin"
-	"github.com/ryanma3003/hris/db"
-	"github.com/ryanma3003/hris/models"
+	"github.com/ricoaditya-u/hris_dev/db"
+	"github.com/ricoaditya-u/hris_dev/models"
 )
 
 func EvaluationIndex(c *gin.Context) {

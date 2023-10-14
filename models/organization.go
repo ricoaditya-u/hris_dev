@@ -4,15 +4,17 @@ import "gorm.io/gorm"
 
 type JobDescription struct {
 	gorm.Model
-	Name        string `json:"name"`
-	Description string `json:"description"`
-	Employees   []Employee
+	Name          string `json:"name"`
+	Description   string `json:"description"`
+	Employees     []Employee
+	Reqheadcounts []Reqheadcount
 }
 
 type Level struct {
 	gorm.Model
-	Name      string `json:"name"`
-	Employees []Employee
+	Name          string `json:"name"`
+	Employees     []Employee
+	Reqheadcounts []Reqheadcount
 }
 
 type Division struct {

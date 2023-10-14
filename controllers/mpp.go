@@ -5,8 +5,8 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	"github.com/ryanma3003/hris/db"
-	"github.com/ryanma3003/hris/models"
+	"github.com/ricoaditya-u/hris_dev/db"
+	"github.com/ricoaditya-u/hris_dev/models"
 	"gorm.io/gorm"
 )
 
@@ -45,9 +45,7 @@ func MppCreate(c *gin.Context) {
 		mpp := models.Mpp{
 			EmployeeID: body[i].EmployeeID,
 			Period:     body[i].Period,
-			DivisionID: body[i].DivisionID,
 			Numberreq:  body[i].Numberreq,
-			Budget:     body[i].Budget,
 			Status:     body[i].Status,
 		}
 
@@ -96,10 +94,8 @@ func MppUpdate(c *gin.Context) {
 
 	// Update
 	err = db.DB.Model(&mppData).Updates(models.Mpp{
-		Period:     body.Period,
-		DivisionID: body.DivisionID,
-		Numberreq:  body.Numberreq,
-		Budget:     body.Budget,
+		Period:    body.Period,
+		Numberreq: body.Numberreq,
 	}).Error
 
 	if err != nil {

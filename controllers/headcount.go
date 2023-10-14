@@ -5,8 +5,8 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	"github.com/ryanma3003/hris/db"
-	"github.com/ryanma3003/hris/models"
+	"github.com/ricoaditya-u/hris_dev/db"
+	"github.com/ricoaditya-u/hris_dev/models"
 	"gorm.io/gorm"
 )
 
@@ -18,7 +18,7 @@ func ListMpp(c *gin.Context) {
 	period := c.Param("period")
 
 	var mpps []models.Mpp
-	err := db.DB.Where("employee_id = ? AND year = ?", employeeid, period).Find(&mpps).Error
+	err := db.DB.Where("employee_id = ? AND extract('year' from TO_DATE(period, 'YYYY-MM')::DATE) = ?", employeeid, period).Preload("Employee.Level").Preload("Employee.Division").Preload("Employee.Department").Find(&mpps).Error
 
 	if err != nil {
 		errors.Is(err, gorm.ErrRecordNotFound)

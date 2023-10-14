@@ -51,6 +51,8 @@ type Employee struct {
 	CriminalNotes    []CriminalNote
 	Courses          []Course
 	References       []Reference
+	Mpps             []Mpp
+	Reqheadcounts    []Reqheadcount
 }
 
 type HistoryDiv struct {

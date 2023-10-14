@@ -2,7 +2,7 @@ package servers
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/ryanma3003/hris/controllers"
+	"github.com/ricoaditya-u/hris_dev/controllers"
 )
 
 func InitializeRoutesService(g *gin.RouterGroup) {

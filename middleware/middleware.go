@@ -8,8 +8,8 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/golang-jwt/jwt/v5"
-	"github.com/ryanma3003/hris/db"
-	"github.com/ryanma3003/hris/models"
+	"github.com/ricoaditya-u/hris_dev/db"
+	"github.com/ricoaditya-u/hris_dev/models"
 )
 
 func Authorize(obj string, act string) gin.HandlerFunc {
